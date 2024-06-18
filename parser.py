@@ -16,6 +16,8 @@ class Parser:
         # Настройка драйвера Chrome
         options = webdriver.ChromeOptions()
         options.add_argument("--headless")  # Запуск в фоновом режиме, без отображения окна браузера
+        options.add_argument('--no-sandbox')
+        options.add_argument('--disable-dev-shm-usage')
         self.driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
 
     def scroll_page(self):
